@@ -1,13 +1,18 @@
+# Exported from:        http://dhivya:5517/
+# Release version:      24.1.0-319.113
+# Date created:         Thu Mar 21 15:56:58 IST 2024
+
 ---
 apiVersion: xl-release/v1
 kind: Templates
 metadata:
-  home: Digital.ai - Official/Workflows/ArgoCD
+  path: /
+  home: ArgoCDCopy
 spec:
 - template: Install Argo Rollouts
   description: Install Argo Rollouts to Kubernetes cluster.
-  scheduledStartDate: 2022-12-07T08:00:00Z
-  dueDate: 2022-12-07T09:00:00Z
+  scheduledStartDate: 2022-12-07T13:30:00+05:30
+  dueDate: 2022-12-07T14:30:00+05:30
   phases:
   - phase: Check if Argo Rollouts is already installed
     tasks:
@@ -187,5 +192,5 @@ spec:
   logo:
     type: xlrelease.TemplateLogo
     contentType: image/png
-    file: !file "template-logo/argo-icon.png"
+    file: !file "template-logo/ce5e2c55c1d65057d9d445256baef6fceef4e644/argo-icon.png"
   defaultTargetFolder: Digital.ai - Official/Workflow Executions

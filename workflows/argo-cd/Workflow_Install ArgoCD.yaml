@@ -1,14 +1,19 @@
+# Exported from:        http://dhivya:5517/
+# Release version:      24.1.0-319.113
+# Date created:         Thu Mar 21 15:56:58 IST 2024
+
 ---
 apiVersion: xl-release/v1
 kind: Templates
 metadata:
-  home: Digital.ai - Official/Workflows/ArgoCD
+  path: /
+  home: ArgoCDCopy
 spec:
 - template: Install ArgoCD
   description: Install ArgoCD on Kubernetes cluster for deploying an Application in
     no time.
-  scheduledStartDate: 2022-12-07T08:00:00Z
-  dueDate: 2022-12-07T09:00:00Z
+  scheduledStartDate: 2022-12-07T13:30:00+05:30
+  dueDate: 2022-12-07T14:30:00+05:30
   phases:
   - phase: Check if ArgoCD is already installed
     tasks:
@@ -23,7 +28,6 @@ spec:
       type: xlrelease.UserInputTask
       description: Input for Kubernetes API server URL and Kubernetes namespace where
         ArgoCD will be installed.
-      owner: "${release.owner}"
       variables:
       - kubernetesApiServer
       - namespace
@@ -128,7 +132,6 @@ spec:
       type: xlrelease.UserInputTask
       description: Input for ArgoCD API server title and host URL for the CI that
         will be created.
-      owner: "${release.owner}"
       variables:
       - argoCDServerTitle
       - argoCDHost
@@ -194,8 +197,8 @@ spec:
   kind: WORKFLOW
   categories:
   - Application onboarding
-  - Application Life Cycle Management
   - Infrastructure Service
+  - Application Life Cycle Management
   variables:
   - type: xlrelease.StringVariable
     key: namespace
@@ -251,6 +254,7 @@ spec:
     showOnReleaseStart: false
     label: Password
     description: Password for automated tasks user
+  disableNotifications: true
   scriptUsername: "${runAsUsername}"
   variableMapping:
     scriptUserPassword: "${runAsUserPassword}"
@@ -258,5 +262,5 @@ spec:
   logo:
     type: xlrelease.TemplateLogo
     contentType: image/png
-    file: !file "template-logo/argo-icon.png"
+    file: !file "template-logo/c9e27d5b1d5ed9738d58781439732acacd6b482d/argo-icon.png"
   defaultTargetFolder: Digital.ai - Official/Workflow Executions
